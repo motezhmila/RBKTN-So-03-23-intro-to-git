@@ -7,6 +7,7 @@
 var length = 16;
 
 var lastName = "Johnson"; 
+var x = 17
 
 var isGreaterThan10 = length > 10;
 
