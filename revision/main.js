@@ -8,6 +8,7 @@ var length = 16;
 
 var lastName = "Johnson"; 
 var x = 17
+var z = 'helloanyway'
 
 var isGreaterThan10 = length > 10;
 
@@ -15,11 +16,11 @@ var isGreaterThan10 = length > 10;
 // *****************************  3  ***********************
 // Fix the errors in the following functions:
 
-func square1"x" { 
+function square1"x" { 
 return x * x ; 
 } 
 
-functionsquare2 x) 
+function square2 x) 
 return x * x ; 
 }
 
