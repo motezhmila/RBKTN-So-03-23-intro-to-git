@@ -1,38 +1,41 @@
 // *****************************  1  ***********************
 // Create a variable called carName, assign the value Volvo to it.
-
+var carName = 'volvo'
 
 // *****************************  2  ***********************
 // Use comments to describe the correct data type of the following variables:
-var length = 16;
-
+// Create a variable called length, assign the value 16 to it.
+var length = 16; 
+// Create a variable called lastName, assign the Johnson 16 to it.
 var lastName = "Johnson"; 
-var x = 17
-var z = 'helloanyway'
-
+// Create a variable called isGreaterThan10, assign the length > 10 to it.
 var isGreaterThan10 = length > 10;
 
 
 // *****************************  3  ***********************
 // Fix the errors in the following functions:
 
-function square1"x" { 
+function square1(x) { 
 return x * x ; 
 } 
 
-function square2 x) 
+function square2 (x) {
 return x * x ; 
 }
 
-function (x) square3 { 
+function  square3 (x) { 
 return x * x;
 }
 
 
 // *****************************  4  ***********************
 // Write a JavaScript program that accept two integers and display the larger.
-function largest() {
-  // TODO: your work goes here
+function largest(int1,int2) {
+
+  if (int1>int2){
+    return int1
+  }
+  return int2
 }
 
 
@@ -46,9 +49,11 @@ Call the function passing numbers 2 and 3 as arguments.
 - To see the result you can console.log it.
 */
 
-function add(number1, number2) {
+function add (number1, number2) {
   // TODO: your work goes here
+  return number1 + number2
 }
+add(2,3)
 
 // *****************************  6  ***********************
 /*
@@ -60,7 +65,10 @@ Call it with the numbers 5 and 1 and console.log the result.
 
 function subtract(number1, number2) {
   // TODO: your work goes here
+  return number1 - number2
+
 }
+subtract (5,1)
 
 // *****************************  7  ***********************
 /*
@@ -77,16 +85,27 @@ else we call the subtract function with our numbers.
 Don't forget to console.log it to see the result.
 TODO: your work goes here
 */
+var operator = '+'
+var x = 5
+var y = 23
+if (operator === '+'){
+  return add (x,y)
+}
+else {
+  return subtract(x,y)
+}
 
 
 // *****************************  8  ***********************
 // Let's create 2 more functions and name them 'divide' and 'multiply'.
 
-function divide() {
+function divide(number1,number2) {
   // TODO: your work goes here
+  return number1/number2
 }
 
-function multiply() {
+function multiply(number1,number2) {
+  return number1*number2
   // TODO: your work goes here
 }
 
@@ -99,6 +118,21 @@ let's extend our 'if else' check that we already created by adding
 else console.log - "Sorry, we don't know this operator".
 (Copy it to here and comment out the first version)
 */
+if (operator === '+'){
+  return add (x,y)
+}
+else if ( operator === '-') {
+  return subtract(x,y)
+}
+else if { (operator === '/')
+return divide(x,y)
+}
+else if {(operator ==='*')
+return multiply(x,y)
+}
+else {
+return  "Sorry, we don't know this operator"
+}
 
 // *****************************  10  ***********************
 /*
@@ -112,6 +146,21 @@ number2 : the right side of the operant
 
 function calculate(operator, number1, number2) {
   // TODO: your work goes here
+  if (operator === '+'){
+    return add (number1,number2)
+  }
+  else if ( operator === '-') {
+    return subtract (number1,number2)
+  }
+  else if  (operator === '/'){
+  return divide (number1,number2)
+  }
+  else if (operator ==='*'){
+  return multiply(number1,number2)}
+  
+  else {
+  return  "Sorry, we don't know this operator"
+  }
 }
 
 /*
@@ -122,6 +171,8 @@ multiply 5 by 3
 subtract 10 from 100
 */
 
+
+
 // *****************************  11  ***********************
 /*
 To convert Celsius to Fahrenheit, you can use the following formula:
@@ -130,8 +181,9 @@ write a function that converts temperature from celsius to Farenheit
 convertTemp(12) => 53.6
 */
 
-function convertTemp() {
+function convertTemp(number) {
   // TODO: your work goes here
+  return (number*1.8) +32
 }
 
 // *****************************  12  ***********************
@@ -141,8 +193,10 @@ and returns the same food with the first letter being capitalized.
 capitalize("pizza") => "Pizza"
 */
 
-function capitalize() {
+function capitalize(food) {
   // TODO: your work goes here
+ return food.charAt(0).toUpperCase()+food.slice(1);
+
 }
 
 // *****************************  13  ***********************
@@ -158,9 +212,14 @@ NOTE: use toFixed() pass it the number of decimal points you want to use.
 For example, if total equals 3.9860, then total.toFixed(2) would return 3.99.
 */
 
-function billing() {
-  // TODO: your work goes here
-}
+function billing(item1,item2,item3) {
+  var price=item1+item2+item3;
+  var tip = (price*15)/100;
+var total= price +tip ;
+     return 'your total is '+price+' thank you for the '+tip.toFixed(2)+ ' tip'
+
+    // TODO: your work goes here
+  }
 
 // *****************************  14  ***********************
 /*
@@ -171,16 +230,23 @@ Here is an awesome messages:
  Use your variables and string concatenation to create your own awesome message.
 */
 
-function awesomeMessage() {
+function createAwesomeMessage(firstName, interest, hobby) {
+  var message = "Hi, my name is " + firstName + ". I love " + interest + ". In my spare time, I like to " + hobby + ".";
+  return message;
+
   // TODO: your work goes here
 }
 
 // *****************************  15  ***********************
 // Write a function that returns "even" if the number is even and "odd" if the number is odd
 
-function parity() {
-  // TODO: your work goes here
-}
+  function parity(number) {
+    if (number % 2===0){
+      return 'even'
+    }
+    return 'odd'
+    // TODO: your work goes here
+  }
 
 // *****************************  16  ***********************
 /*
@@ -204,6 +270,10 @@ and return the new string.
 */
 
 function removeCharacter(string, position) {
+  
+ var t=string.slice(0, position) + string.slice(position + 1);
+ return t
+
   // TODO: your work goes here
 }
 
@@ -211,6 +281,9 @@ function removeCharacter(string, position) {
 // Write a JavaScript program to find a value which is nearest to 100 from two different given integer values
 
 function nearestTo100(number1, number2) {
+  if ((Math.abs(100-number1))<(Math.abs(100-number2)))
+  {return number1}
+  return number2
   // TODO: your work goes here
 }
 
@@ -222,6 +295,13 @@ function nearestTo100(number1, number2) {
 */
 
 function lastDigit(num1, num2, num3) {
+  var x = num1%10
+  var y =num2%10
+  var z =num3%10
+  if ((x===y)&&(x===z)){
+    return true
+  }
+  return false
   // TODO: your work goes here
 }
 
@@ -255,4 +335,21 @@ murder("ballroom", "Ms. Van Cleve") => "There is no way Ms. Van Cleve did it!"
 
 function murder(room, name) {
   // TODO: your work goes here
+ 
+  if ((room==='ballroom')&&(name==='Mr. Kalehoff')){
+    return name+' did itin the '+room+' withe the poison' 
+  }
+  else if ((room==='galler')&&(name==='Ms. Van Cleve')) {
+    return name+' did itin the '+room+' withe the trophy '
+  }
+  else if ((room==='billiards room')&&(name==='Mrs. Sparr')){
+    return name+' did itin the '+room+' withe the pool stick '
+  }
+else if ((room==='dining room')&&(name==='Mr. Kalehoff')){
+  return name+' did itin the '+room+' withe the knife'
+}
+else {
+  return 'theree is no way '+name+' did it!'
+}
+
 }
